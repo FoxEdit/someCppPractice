@@ -4,17 +4,19 @@
 
 #include "functions.h"
 
+#include <algorithm>
+#include <iostream>
+#include <numeric>
 
-
-void showArray(const double* arr, const size_t len) {
+void showArray(const double* arr, int len) {
     for (size_t i = 0; i < len; ++i) std::cout << arr[i] << " ";
 }
 
-void mirrorArray(int* arr, const size_t len) {
+void mirrorArray(int* arr, int len) {
     for (size_t i = 0; i < len; ++i) arr[i] = arr[i] == 1 ? 0 : 1;
 }
 
-void inThree(int* arr, const size_t len) {
+void inThree(int* arr, int len) {
     for (size_t i = 0; i < len; ++i) {
         if (i == 0) {
             arr[i] = 1;
@@ -47,11 +49,11 @@ void setArrayOffset(int* arr, int offset, int len) {
     }
 }
 
-bool checkBalance(const int* arr, const size_t len) {
+bool checkBalance(const int* arr, int len) {
     int firstPartOfArray;
     int secondPartOfArray;
 
-    for (size_t i = 0; i < len; ++i) {
+    for (int i = 0; i < len; ++i) {
         firstPartOfArray = std::accumulate(arr, arr + (i + 1), 0);
         secondPartOfArray = std::accumulate(arr + (i + 1), arr + len, 0);
 
