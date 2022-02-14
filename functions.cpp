@@ -25,11 +25,11 @@ void inThree(int* arr, const size_t len) {
     }
 }
 
-void setArrayOffset(int* arr, int offset, const size_t len) {
+void setArrayOffset(int* arr, int offset, int len) {
     if (offset < 0) {
         offset = -offset;
 
-        for (size_t i = 0; i < offset; ++i) {
+        for (int i = 0; i < offset; ++i) {
             int temp = arr[0];
 
             for (int j = 1; j < len; ++j) arr[j - 1] = arr[j];
@@ -37,10 +37,10 @@ void setArrayOffset(int* arr, int offset, const size_t len) {
             arr[len - 1] = temp;
         }
     } else {
-        for (size_t i = 0; i < offset; i++) {
+        for (int i = 0; i < offset; i++) {
             int temp = arr[len - 1];
 
-            for (size_t k = len - 2; k >= 0; k--) arr[k + 1] = arr[k];
+            for (int k = len - 2; k >= 0; k--) arr[k + 1] = arr[k];
 
             arr[0] = temp;
         }
