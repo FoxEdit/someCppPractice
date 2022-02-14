@@ -1,6 +1,3 @@
-#include <iostream>
-#include <numeric>
-
 #include "functions.h"
 
 int main() {
@@ -16,7 +13,7 @@ int main() {
     const int LEN_TWO = 4;
     int arrayTwo[LEN_TWO];
 
-    for (int i = 0; i < LEN_TWO; ++i) {
+    for (size_t i = 0; i < LEN_TWO; ++i) {
         arrayTwo[i] = rand() % 2;
     }
 
