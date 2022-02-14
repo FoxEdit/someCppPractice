@@ -37,10 +37,10 @@ int main() {
 
     // --------------------------------
 
-    const int LEN_FOUR = 10;
-    int arrayFour[LEN_FOUR] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    const int LEN_FOUR = 6;
+    int arrayFour[LEN_FOUR] = { 4, 3, 1, 6, 2,9};
 
-    setArrayOffset(arrayFour, 1, LEN_FOUR);
+    setArrayOffset(arrayFour, -2, LEN_FOUR);
 
     cout << "\n------------\n";
     for (int i = 0; i < LEN_FOUR; ++i) {

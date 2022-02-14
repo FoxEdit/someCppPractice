@@ -4,6 +4,7 @@
 
 #include "functions.h"
 
+#include <algorithm>
 #include <iostream>
 #include <numeric>
 
@@ -26,13 +27,25 @@ void inThree(int* arr, int len) {
     }
 }
 
-// https://vk.cc/caZQ1K
 void setArrayOffset(int* arr, int offset, int len) {
-    if (offset > 0) {
-        for (size_t i = 0; i < len; ++i) arr[i] = (i + offset) % len;
-    } else if (offset < 0) {
-        while (offset < 0) offset += len;
-        for (size_t i = 0; i < len; ++i) arr[i] = (i + offset) % len;
+    if (offset < 0) {
+        offset = -offset;
+
+        for (int i = 0; i < offset; ++i) {
+            int temp = arr[0];
+
+            for (int j = 1; j < len; ++j) arr[j - 1] = arr[j];
+
+            arr[len - 1] = temp;
+        }
+    } else {
+        for (int i = 0; i < offset; i++) {
+            int temp = arr[len - 1];
+
+            for (int k = len - 2; k >= 0; k--) arr[k + 1] = arr[k];
+
+            arr[0] = temp;
+        }
     }
 }
 
