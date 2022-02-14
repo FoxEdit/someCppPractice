@@ -38,30 +38,22 @@ int main() {
     // --------------------------------
 
     const int LEN_FOUR = 6;
-    int arrayFour[LEN_FOUR] = { 4, 3, 1, 6, 2,9 };
+    int arrayFour[LEN_FOUR] = {4, 3, 1, 6, 2, 9};
 
-    setArrayOffset(arrayFour, 2, LEN_FOUR);
+    setArrayOffset(arrayFour, -2, LEN_FOUR);
 
     cout << "\n------------\n";
     for (int i = 0; i < LEN_FOUR; ++i) {
         cout << arrayFour[i] << " ";
     }
 
-
-
-
-
-
-
-
-
     // --------------------------------
 
-/*    const int LEN_FIVE = 5;
+    const int LEN_FIVE = 5;
     int arrayFive[LEN_FIVE] = {10, 1, 2, 3, 4};
 
     cout << "\n------------\n";
-    cout << checkBalance(arrayFive, LEN_FIVE);*/
+    cout << checkBalance(arrayFive, LEN_FIVE);
 
     return 0;
 }
